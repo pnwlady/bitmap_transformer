@@ -27,7 +27,7 @@ node index.js [file option]
 User can add a bmp file to the `/images` directory and select that file name.
 
 ## Transformation
-If no transformation argument is passed, the transformation will default to greyscale, and if the chooseColor process is not given a color choice, it will default to red.
+If no transformation argument is passed, the transformation will default to inversion, and if the chooseColor process is not given a color choice, it will default to blue.
 
 ## Transformation options
 Choose from the following transformations as the second argument.

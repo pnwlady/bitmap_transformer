@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const elsint = require('gulp-eslint');
+const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
 var allFiles = [
   '/lib/**/*',

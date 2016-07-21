@@ -8,31 +8,31 @@ describe('transform.grayscale function', function() {
     var pixelValues = [];
     fs.readFile(__dirname + '/test.bmp', (error, data) => {
       if (error) return console.dir(error);
-      var bitTest = newBitmapTest(data);
+      var bitTest = new BitmapTest(data);
       transform.determinePalette(bitTest);
       transform.grayscale(bitTest, data);
       for (var i = 11952; i <= 11960; i++) {
         pixelValues.push(data.readUIntLE(i, 1));
       }
-      expect(pixelValues).to.eql([174, 174, 174, 80, 80, 80, 80, 80, 80]);
+      expect(pixelValues).to.eql([0, 0, 0, 206, 206, 206, 184, 184, 184, 80]);
       done();
     });
   });
 });
 
-describe('transform.choseColor function', function() {
-  it('should change a pixels RGB value to reflect chosen color (chose color has highest value)', (function(done) {
+describe('transform.chooseColor function', function() {
+  it('should change a pixels RGB value to reflect chosen color (choose color has highest value)', (function(done) {
     var pixelValues = [];
     var color = 'green';
     fs.readFile(__dirname + '/test.bmp', (error, data) => {
       if (error) return console.dir(error);
       var bitTest = new BitmapTest(data);
       transform.determinePalette(bitTest);
-      transform.choseColor(bitTest, data, color);
+      transform.chooseColor(bitTest, data, color);
       for (var i = 11952; i <= 11960; i++) {
-        pixelValue.push(data.readUIntLE(i, 1));
+        pixelValues.push(data.readUIntLE(i, 1));
       }
-      expect(pixelValues).to.eql([123, 215, 123, 63, 116, 63, 63, 116, 63]);
+      expect(pixelValues).to.eql([0, 0, 0, 189, 239, 239, 123, 239, 239]);
       done();
     });
   }));

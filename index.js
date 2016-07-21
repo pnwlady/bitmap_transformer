@@ -1,6 +1,6 @@
 const fs = require('fs');
 const transformer = require(__dirname + '/lib/transformers.js');
-var image = process.argv[2] || 'nonPalette';
+var image = process.argv[2] || 'main';
 var chosenTransform = process.argv[3] || 'inversion';
 var color = process.argv[4] || 'blue';
 

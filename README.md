@@ -11,7 +11,7 @@ node index.js [file] [transformation choice][color]
 The image will be transformed and written to the `newImage.bmp` file in the `/images` directory.
 
 ## Image File
-If no file argument is passed, the default is a non-palette bitmap image.
+If no file argument is passed, the default is a the main bitmap image.
 
 All of the transformation methods work with paletted and non-paletted images with 8-bit indexed colors, as well as 24-bit (RGB) and 32-bit (RGBA) non-paletted color depths. The alpha value in the 32-bit color will not be changed.
 
@@ -19,7 +19,7 @@ All of the transformation methods work with paletted and non-paletted images wit
 Choose from the following, as the first argument.  
 `palette`
 `nonPalette`
-`pikachu`
+`main`
 
 ```
 node index.js [file option]

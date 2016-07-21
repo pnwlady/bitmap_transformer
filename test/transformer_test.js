@@ -3,18 +3,18 @@ const fs = require('fs');
 const transform = require(__dirname + '/../lib/transformers');
 const BitmapTest = require(__dirname + '/../lib/bitmap');
 
-describe('transform.grayscale function', function() {
-  it('should chage a pixel RGB values to the average', (error, data) => {
+describe('transform.inversion function', function() {
+  it('should chage a pixel RGB values be inverted', (error, data) => {
     var pixelValues = [];
-    fs.readFile(__dirname + '/test.bmp', (error, data) => {
+    fs.readFile(__dirname + '/testRGB.bmp', (error, data) => {
       if (error) return console.dir(error);
       var bitTest = new BitmapTest(data);
       transform.determinePalette(bitTest);
-      transform.grayscale(bitTest, data);
-      for (var i = 11952; i <= 11960; i++) {
+      transform.inversion(bitTest, data);
+      for (var i = 1001; i <= 1010; i++) {
         pixelValues.push(data.readUIntLE(i, 1));
       }
-      expect(pixelValues).to.eql([0, 0, 0, 206, 206, 206, 184, 184, 184, 80]);
+      expect(pixelValues).to.eql([85, 1, 17, 0, 0, 1, 17, 1, 85, 104]);
       done();
     });
   });
